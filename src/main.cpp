@@ -101,10 +101,8 @@ void handle_sigint(int sig)
 void clean_up()
 {
     std::cout << "Cleaning up ..." << std::endl;
-    if (&fp != nullptr)
-    {
-        pcap_freecode(&fp);
-    }
+
+    pcap_freecode(&fp);
     if (handle != nullptr)
     {
         pcap_close(handle);
